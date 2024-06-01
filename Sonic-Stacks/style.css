@@ -2,9 +2,9 @@
 
 
 :root {
-    --primary: #020617;
+    --primary: #040c27;
     --secondary: #12c3e1;
-    --light: #F6F7F8;
+    --light: #ffff;
     --dark: #010A35;
 }
 
@@ -12,15 +12,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 body {
     background-color: var(--primary);
     scroll-behavior: smooth; 
+    
+}
+html{
+    scroll-padding-top: 6rem; /* height of sticky header */
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     height: 6rem;
@@ -48,6 +52,9 @@ header {
 .items {
     display: flex;
     gap: 20px;
+    border: 2px solid var(--secondary);
+    border-radius: 25px;
+    padding: .5rem;
 }
 .items a {
     font-size: medium;
@@ -66,6 +73,18 @@ header {
     margin: 0;
     padding: 0;
 }
+.profile{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary);
+
+}
+
+.blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100;
+}
 
 .hamburger {
     display: none;
@@ -80,6 +99,9 @@ header {
 
 /* Mobile view */
 @media (max-width: 768px) {
+    .profile{
+        display: none;
+    }
     .items {
         display: none;
         flex-direction: column;
@@ -88,6 +110,8 @@ header {
         left: 0;
         width: 100%;
         background-color: var(--primary);
+        border: none;
+        
     }
 
     .items a {
@@ -108,7 +132,56 @@ header {
 
 /* Section styling for demonstration */
 section {
+    margin-top: 5rem;
     padding: 60px 20px;
     height: 100vh;
+    z-index: 10;
 }
 
+.home-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.tagline {
+    font-size: 2.5rem;
+    color: var(--secondary);
+  }  
+  .info p{
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--light);
+    padding: 1rem .5rem;
+  }
+
+  .play-icon{
+    padding: .5rem; 
+    font-weight: 600; 
+    font-size: larger; 
+    margin:1rem 1rem; 
+    border: 1px solid blue; 
+    color: aqua; 
+    background-color: #040c27; 
+    border-radius: 25px; 
+    cursor: pointer;
+    margin-bottom: 4rem;
+  }
+  .play-icon:hover,
+  .play-icon:active{
+    border: 2px solid blue;    
+  }
+  @media (max-width: 768px) {
+    .home-section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tagline{
+        font-size: 2rem;
+    }
+    .description {
+        display: none;
+    }
+
+}
