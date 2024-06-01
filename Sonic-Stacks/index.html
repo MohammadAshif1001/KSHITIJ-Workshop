@@ -30,51 +30,8 @@
             animation: draw 5s linear infinite;
         }
 
-        .card {
-            display: flex;
-            flex-wrap: wrap;
-    background: #030e38;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 325px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.card-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    
-}
 
-.card-image {
-    width: 18rem;
-    border-radius: 1rem;
-}
-
-.card-title {
-    color: bisque;
-    font-size: 24px;
-    margin: 15px 1px;
-}
-
-.card-description {
-    color: #ffff;
-    font-size: 16px;
-    margin: 0 0 20px;
-    text-align: justify;
-}
-
-.card-songs {
-    position: relative;
-    left: 14rem;
-    top: -.5rem;
-    font-size: 14px;
-    color: #e0f7fa;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 1px;
-    border-radius: 5px;
-}
+        
     </style>
 
 </head>
@@ -106,12 +63,12 @@
     <!-- Header End -->
 
     <!-- Hero Section -->
-    <section id="home">
+    <section id="home" style="margin-top: 5rem;">
         <div class="home-section">
             <div class="info">
                 <div class="container">
-                    <p class="title" style="font-size: 1rem; color: darkkhaki;">Discover Sonic Harmony <span><i
-                                class='bx bx-headphone'></i></span></p>
+                    <p class="title" style="font-size: 1rem; color: darkkhaki;">Discover Sonic Harmony <span>
+                        <i class='bx bx-headphone'></i></span></p>
                     <h1 class="tagline">Embark on a Melodic Journey <br> <span></span>with Sonic Stack</span></h1>
                     <p class="description">Dive into a world where every note tells a story, every rhythm ignites
                         emotion, and every beat resonates with your soul. Explore curated tracks, connect with fellow
@@ -176,23 +133,104 @@
 
 <!-- Fetured Playlist Section -->
         <section id="featured">
-            <div class="container">
+            <div class="tittle">
+                <h1>Featured Playlists<span>Your Ultimate Music Experience</span></h1>
+              </div>
+            <div class="card-container">
                 <div class="card">
                     <p class="card-songs"><strong>25 Songs</strong></p>
                     <img src="assets/Img/rap-nation.jpg" alt="Playlist Image" class="card-image">
-                    
-                        <h2 class="card-title">Chill Vibes</h2>
-                    <p class="card-description">With a vast selection featuring calming tracks from stars like Celeste, Lana Del Rey, Lorde, and Noah, Sad Indie is perfect for soothing your soul.</p>
-                    <div class="btn" style="display: flex; justify-content: center;">
-                        <button style="margin-bottom: 0;" class="play-icon">▶ Get Music Free</button>
+                    <h2 class="card-title" id="rap-nation">Rap Nation</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow">
+                        <label for="follow" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">This Spotify playlist is a haven for Rap Nation fans, featuring tracks from artists like Drake, Skepta, Kanye West, Key Glock, and Chief Keef.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
                     </div>
                 </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/a90s.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="a">All Out 90s</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-a">
+                        <label for="follow-a" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">Relive the 90s with All Out 90s hits from Jennifer Lopez, Shania Twain, Spice Girls, and Britney Spears in one place.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/mood-booster.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="b">Mood Booster</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-b">
+                        <label for="follow-b" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">Mood Booster’s hits from Miley Cyrus, Justin Timberlake, and the Jonas Brothers will quickly improve your mood.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/sad-indie.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="c">Sad Indie</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-c">
+                        <label for="follow-c" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">With a vast selection featuring calming tracks from stars like Celeste, Lana Del Rey, Lorde, and Noah, Sad Indie is perfect for soothing your soul.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/Hip-hop.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="d">Hip-hop</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-d">
+                        <label for="follow-d" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">I Love My ’90s Hip-Hop is for all rap fans and features the best 90s hip-hop legends like Snoop Dogg, 2Pac, and Dr. Dre.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/rock-clasic.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="e">Rock Classics</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-e">
+                        <label for="follow-e" class="follow-button"></label>
+                    </div>
+                    <p class="card-description">Rock Classics is definitely one of the best playlists on Spotify with hits from AC/DC, Rolling Stones, Guns N Roses, Aerosmith, Bon Jovi, and other evergreen names.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                
+               
             </div>
             
         </section>
 <!-- Recommended Music Section -->
         <section id="recommended">
-
+            <div class="tittle">
+                <h1>Recommended<span>Your Ultimate Music Experience</span></h1>
+              </div>
         </section>
 
 
