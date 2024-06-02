@@ -53,11 +53,17 @@
             <a href="#featured">Featured</a>
             <a href="#recommended">Recommended</a>
             <a href="#reviews">Reviews</a>
+            
+            <i class='bx bx-search-alt-2 search-icon'></i>
+            <input id="search-box" type="search" placeholder="Seach...." >
+            
+            
         </div>
+        
         <div class="profile">
-            <i class='bx bx-play-circle'></i>
-            <i style="position: relative; right: 30px; bottom: 10px;" class='bx bx-user' ></i>
-            <!-- <input type="Search"> -->
+            <!-- <i class='bx bx-play-circle'></i>
+            <i style="position: relative; right: 30px; bottom: 10px;" class='bx bx-user' ></i> -->
+            <button onclick="toggleDarkMode()" style="background-color: transparent;border:1px solid slateblue; display: flex; border-radius: 25px; font-size: 2rem; color:black;" ><i class='bx bxs-circle' id="cr2"></i><i id="cr" class='bx bxs-circle'></i></button>
         </div>
     </header>
     <!-- Header End -->
@@ -145,6 +151,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow">
                         <label for="follow" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">This Spotify playlist is a haven for Rap Nation fans, featuring tracks from artists like Drake, Skepta, Kanye West, Key Glock, and Chief Keef.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -160,6 +167,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow-a">
                         <label for="follow-a" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">Relive the 90s with All Out 90s hits from Jennifer Lopez, Shania Twain, Spice Girls, and Britney Spears in one place.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -175,6 +183,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow-b">
                         <label for="follow-b" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">Mood Booster’s hits from Miley Cyrus, Justin Timberlake, and the Jonas Brothers will quickly improve your mood.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -188,6 +197,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow-c">
                         <label for="follow-c" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">With a vast selection featuring calming tracks from stars like Celeste, Lana Del Rey, Lorde, and Noah, Sad Indie is perfect for soothing your soul.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -201,6 +211,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow-d">
                         <label for="follow-d" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">I Love My ’90s Hip-Hop is for all rap fans and features the best 90s hip-hop legends like Snoop Dogg, 2Pac, and Dr. Dre.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -216,6 +227,7 @@
                         <input type="checkbox" class="follow-checkbox" id="follow-e">
                         <label for="follow-e" class="follow-button"></label>
                     </div>
+                    <div id="line"></div>
                     <p class="card-description">Rock Classics is definitely one of the best playlists on Spotify with hits from AC/DC, Rolling Stones, Guns N Roses, Aerosmith, Bon Jovi, and other evergreen names.</p>
                     <div class="btn" style="margin: auto;">
                         <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
@@ -230,14 +242,154 @@
         <section id="recommended">
             <div class="tittle">
                 <h1>Recommended<span>Your Ultimate Music Experience</span></h1>
+                <i class='bx bx-search-alt-2 search-icon2'></i>
+            <input id="search-box" type="search" placeholder="Seach...." >
               </div>
+
+              <div class="card-container" style="margin-top: 2rem;">
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/rap-nation.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="rap-nation">Rap Nation</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow">
+                        <label for="follow" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">This Spotify playlist is a haven for Rap Nation fans, featuring tracks from artists like Drake, Skepta, Kanye West, Key Glock, and Chief Keef.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/a90s.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="a">All Out 90s</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-a">
+                        <label for="follow-a" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">Relive the 90s with All Out 90s hits from Jennifer Lopez, Shania Twain, Spice Girls, and Britney Spears in one place.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/mood-booster.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="b">Mood Booster</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-b">
+                        <label for="follow-b" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">Mood Booster’s hits from Miley Cyrus, Justin Timberlake, and the Jonas Brothers will quickly improve your mood.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/sad-indie.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="c">Sad Indie</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-c">
+                        <label for="follow-c" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">With a vast selection featuring calming tracks from stars like Celeste, Lana Del Rey, Lorde, and Noah, Sad Indie is perfect for soothing your soul.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/Hip-hop.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="d">Hip-hop</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-d">
+                        <label for="follow-d" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">I Love My ’90s Hip-Hop is for all rap fans and features the best 90s hip-hop legends like Snoop Dogg, 2Pac, and Dr. Dre.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <p class="card-songs"><strong>25 Songs</strong></p>
+                    <img src="assets/Img/rock-clasic.jpg" alt="Playlist Image" class="card-image">
+                    <h2 class="card-title" id="e">Rock Classics</h2>
+                    <div class="follow-container">
+                        <input type="checkbox" class="follow-checkbox" id="follow-e">
+                        <label for="follow-e" class="follow-button"></label>
+                    </div>
+                    <div id="line"></div>
+                    <p class="card-description">Rock Classics is definitely one of the best playlists on Spotify with hits from AC/DC, Rolling Stones, Guns N Roses, Aerosmith, Bon Jovi, and other evergreen names.</p>
+                    <div class="btn" style="margin: auto;">
+                        <button style="margin: 0rem; font-size: 1rem;" class="play-icon">▶ Get Music Free</button>
+                    </div>
+                </div>
+                
+               
+            </div>
         </section>
 
 
         <!-- User Reviews Section-->
         <section id="reviews">
+            <div class="tittle">
+                <h1>Reviews<span>Your Ultimate Music Experience</span></h1>
+              </div>
+
+              <div class="review-section">
+                <div class="reviews">
+                    <div class="review-card">
+                        <h3>John Doe</h3>
+                        <p>"Amazing music platform! The sound quality is fantastic, and I love the curated playlists. Highly recommend it to all music lovers!"</p>
+                        <small>Posted on June 1, 2024</small>
+                    </div>
+                </div>
+                <div class="review-form">
+                    <form action="#" method="post">
+                        <div class="inputs">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" required>
+                         </div>
+                         <div class="inputs">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="inputs">
+                        <label for="review">Review:</label>
+                        <textarea name="review" id="review" rows="4" cols="50" required></textarea>
+                    </div>
+                    <div class="inputs">
+                        <button type="submit">Submit</button>
+                    </div>
+                    </form>
+                
+                </div>
+              </div>
             
         </section>
  </body>
+ <script>
+    function toggleDarkMode() {
+    if (document.documentElement.getAttribute('theme') === 'dark') {
+        document.documentElement.removeAttribute('theme');
+    } else {
+        document.documentElement.setAttribute('theme', 'dark');
+    }
+}
+
+ </script>
 
 </html>

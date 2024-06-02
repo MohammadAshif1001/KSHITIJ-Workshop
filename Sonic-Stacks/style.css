@@ -2,11 +2,37 @@
 
 
 :root {
-    --primary: #040c27;
-    --secondary: #12c3e1;
-    --light: #ffff;
-    --dark: #010A35;
+    --primary: #EEEEEE;
+    --secondary: #DC5F00;
+    --dark: #373A40;
+    --shadow: #686D76;
+    --leaf: #4CAF50;
+    --tittle: #040a23;
+    --darkbtn: var(--primary);
 }
+[theme="dark"] {
+    --primary: #040a23; 
+    --secondary: #22d3ee; 
+    --dark: #CCCCCC; 
+    --shadow: #3A3F47; 
+    --leaf: #6BBF59; 
+    --tittle: var(--secondary);
+    --darkbtn: var(--dark);
+    --darkBtn: var(--primary);
+    
+}
+#cr{
+    color: var(--darkbtn)
+}
+#cr2{
+    color: var(--darkBtn);
+}
+/* :root { 
+    --primary: #ffff;
+    --secondary: #12c3e1;
+    --dark: #000;
+    --dark: #333333;
+} */
 
 * {
     margin: 0;
@@ -55,16 +81,17 @@ header {
 .items {
     display: flex;
     gap: 20px;
-    border: 2px solid var(--secondary);
+    border: 1px solid var(--dark);
     border-radius: 25px;
-    padding: .5rem;
+    padding: .3rem;
+    align-items: center;
 }
 
 .items a {
     font-size: medium;
     text-decoration: none;
-    color: var(--light);
-    font-weight: 500;
+    color: var(--dark);
+    font-weight: 600;
     margin: 0 1rem;
 }
 
@@ -79,6 +106,51 @@ header {
     padding: 0;
 }
 
+#search-box {
+    color: #333333; 
+    font-size: 1rem; 
+    font-weight: 500;
+    padding: 0.5rem 1rem 0.5rem 2.8rem; 
+    background-color: transparent; 
+    border: 1px solid #333333; 
+    border-radius: 25px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+}
+.search-icon {
+    position: relative;
+    top: .2rem;
+    left: 4rem;
+    color: var(--dark); 
+    font-size: 1.9rem;
+    pointer-events: none;
+
+
+}
+.search-icon2 {
+    position: relative;
+    top: .5rem;
+    left: 3rem;
+    color: var(--dark); 
+    font-size: 1.9rem;
+    pointer-events: none;
+
+
+}
+
+
+
+#search-box:focus {
+    outline: none; 
+    border-color: #007BFF; 
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25); 
+}
+#search-box:hover{
+   color: var(--dark);
+}
+
+
 .profile {
     font-size: 1.5rem;
     cursor: pointer;
@@ -88,7 +160,7 @@ header {
 
 .blur {
     position: absolute;
-    box-shadow: 0 0 1000px 50px #1d4ed8;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25); 
     z-index: -100;
 }
 
@@ -109,7 +181,14 @@ header {
     .profile {
         display: none;
     }
-
+    #search-box{
+        margin-top: -2rem;
+    }
+    .search-icon{
+        display: none;
+        top: 1.6rem;
+        left: .8rem;
+    }
     .items {
         display: none;
         flex-direction: column;
@@ -119,6 +198,8 @@ header {
         width: 100%;
         background-color: var(--primary);
         border: none;
+        align-items: stretch;
+        padding-bottom: 3rem;
 
     }
 
@@ -153,13 +234,14 @@ section {
 
 .tagline {
     font-size: 2.5rem;
+    font-weight: 600;
     color: var(--secondary);
 }
 
 .info p {
     font-size: 1rem;
     font-style: italic;
-    color: var(--light);
+    color: var(--dark);
     padding: 1rem .5rem;
 }
 
@@ -168,9 +250,9 @@ section {
     font-weight: 600;
     font-size: larger;
     margin: 1rem 1rem;
-    border: 1px solid blue;
-    color: aqua;
-    background-color: #040c27;
+    border: 1px solid var(--leaf);
+    color: var(--dark);
+    background-color: var(--primary);
     border-radius: 25px;
     cursor: pointer;
     margin-bottom: 4rem;
@@ -178,7 +260,7 @@ section {
 
 .play-icon:hover,
 .play-icon:active {
-    border: 2px solid blue;
+    border: 2px solid var(--secondary);
 }
 
 @media (max-width: 768px) {
@@ -211,7 +293,7 @@ section {
 .card {
     display: flex;
     flex-wrap: wrap;
-    background: #040c27;
+    background: var(--primary);
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.26);
     padding: 1rem;
@@ -238,27 +320,34 @@ section {
 }
 
 .card-title {
-    color: bisque;
+    color: rgb(241, 139, 14);
     font-size: 24px;
     margin: 15px 1px;
 }
 
 .card-description {
-    color: #ffff;
+    color: var(--dark);
     font-size: 16px;
     margin: 0 0 20px;
     text-align: justify;
+    font-style: italic;
+}
+
+#line{
+    border-bottom: 1px dotted #888888; width: 100%; margin: .5rem; margin-top: -1.2rem;
 }
 
 .card-songs {
     position: relative;
     left: 14rem;
     top: -.5rem;
-    font-size: 14px;
-    color: #e0f7fa;
-    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
     padding: 1px;
     border-radius: 5px;
+    padding-left: 10px;
+    
 }
 
 .follow-container {
@@ -326,7 +415,7 @@ h1 span {
     text-align: center;
     font-size: 50px;
     text-transform: uppercase;
-    color: #222;
+    color: var(--tittle);
     letter-spacing: 1px;
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -398,5 +487,104 @@ h1 span {
         border-top: 1px solid #ccc;
         height: 5px;
         background-color: #f8f8f8;
+    }
+}
+
+/* Reviews Section */
+.review-section{
+    display: flex;
+    justify-content: space-between;
+}
+.review-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.inputs{
+    margin-bottom: 1rem;
+}
+/* Review Section Styles */
+.review-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.review-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.review-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-form .inputs {
+    margin-bottom: 1rem;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-form input[type="text"],
+.review-form input[type="email"],
+.review-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.review-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .review-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .reviews {
+        width: 60%;
+    }
+
+    .review-form {
+        width: 35%;
     }
 }
