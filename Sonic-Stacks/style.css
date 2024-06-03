@@ -65,16 +65,19 @@ header {
     align-items: center;
     z-index: 1001;
     background-color: var(--primary);
+    /* box-shadow: 0 8px 4px rgba(224, 221, 221, 0.452); */
 }
 
 
 .logo img {
+    background-color: #fa848400;
+    padding-top: 1rem;
     height: 5rem;
 }
 
 @media (max-width: 768px) {
     .logo img {
-        height: 3rem;
+        height: 4rem;
     }
 }
 
@@ -167,7 +170,7 @@ header {
 
 .hamburger {
     display: none;
-    font-size: 30px;
+    font-size: 2.8rem;
     cursor: pointer;
     color: var(--secondary);
 }
@@ -275,6 +278,59 @@ section {
 .play-icon:active {
     border: 2px solid var(--secondary);
 }
+
+/* Animate SVG icon */
+       
+.animation svg{
+    width: 401px;
+    height: 384px;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+@media (max-width:784px){
+    .animation svg{
+    width: 350px;
+    height: 350px;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+}
+
+@keyframes vibrate {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        20% {
+            transform: translate(-2px, -2px);
+        }
+        40% {
+            transform: translate(2px, -2px);
+        }
+        60% {
+            transform: translate(-2px, 2px);
+        }
+        80% {
+            transform: translate(2px, 2px);
+        }
+    }
+
+    #tone-t{
+        animation: vibrate 2s linear infinite;
+    }
+    #tone-b{
+        animation: vibrate 3s linear infinite;
+    }
+    #upper-tone{
+        animation: vibrate 6s linear infinite;
+    }
+    #tone-3{
+        animation: vibrate 4s linear infinite;
+    }
+    #tone2{
+        animation: vibrate 5s linear infinite;
+    }
+    
+
 
 @media (max-width: 768px) {
     .home-section {
@@ -690,13 +746,23 @@ h1 span {
     font-size: 1.5rem;
 }
 #bTt-btn{
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    font-size: 2rem;
-    font-weight: 800;
     color: var(--tittle);
     border: 1px solid var(--secondary);
-    padding: .5rem;
-    border-radius: 100px;
+    padding: 0.5rem;
+    border-radius: 50px;
+}
+#bTt-btn a i{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+#bTt-btn:hover{
+    background-color: var(--secondary);
+    color: var(--primary);
 }
 
 
