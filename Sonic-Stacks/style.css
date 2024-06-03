@@ -21,18 +21,8 @@
     --darkBtn: var(--primary);
     
 }
-#cr{
-    color: var(--darkbtn)
-}
-#cr2{
-    color: var(--darkBtn);
-}
-/* :root { 
-    --primary: #ffff;
-    --secondary: #12c3e1;
-    --dark: #000;
-    --dark: #333333;
-} */
+
+
 
 * {
     margin: 0;
@@ -110,6 +100,14 @@ header {
     padding: 0;
 }
 
+#cr{
+    color: var(--darkbtn)
+}
+#cr2{
+    color: var(--darkBtn);
+}
+
+
 #search-box {
     color: #333333; 
     font-size: 1rem; 
@@ -132,6 +130,7 @@ header {
 
 
 }
+
 .search-icon2 {
     position: relative;
     top: .5rem;
@@ -161,6 +160,7 @@ header {
     color: var(--secondary);
 
 }
+
 
 .blur {
     position: absolute;
