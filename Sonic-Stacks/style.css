@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap');
 
 
+
 :root {
     --primary: #EEEEEE;
     --secondary: #DC5F00;
@@ -10,7 +11,7 @@
     --tittle: #040a23;
     --darkbtn: var(--primary);
 }
-[theme="dark"] {
+:root:has(#darkThemeToggle:checked) {
     --primary: #040a23; 
     --secondary: #22d3ee; 
     --dark: #CCCCCC; 
@@ -19,9 +20,7 @@
     --tittle: var(--secondary);
     --darkbtn: var(--dark);
     --darkBtn: var(--primary);
-    
 }
-
 
 
 * {
@@ -32,10 +31,9 @@
     scroll-behavior: smooth !important;
 }
 
-body {
+body{
     background-color: var(--primary);
     
-
 }
 
 html {

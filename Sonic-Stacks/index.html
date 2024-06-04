@@ -41,7 +41,8 @@
             <i style="position: relative; right: 30px; bottom: 10px;" class='bx bx-user' ></i> -->
             
            
-                    <button onclick="toggleDarkMode()" style="background-color: transparent;border:1px solid slateblue; display: flex; border-radius: 25px; font-size: 2rem; color:black;" ><i class='bx bxs-circle' id="cr2"></i><i id="cr" class='bx bxs-circle'></i></button>
+            <input style="display: none;" type="checkbox" id="darkThemeToggle"/>
+            <label for="darkThemeToggle"  style="background-color: transparent;border:1px solid slateblue; display: flex; border-radius: 25px; font-size: 2rem; color:black;"><i class='bx bx-sun' id="cr" ></i><i class='bx bx-moon' id="cr2"></i></label>
                
             
             
@@ -351,7 +352,7 @@
             <div class="footer">
                 <div class="footer-list">
                     <div class="about">
-                    <img src="assets/logo/logo8.png" alt="">
+                    <img src="assets/logo/logo.png" alt="Sonic Stack">
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor odit fuga cumque inventore vero minima!</p>
                     <div class="socila-icon">
                         <a href="https://instagram.com/1m.ashif" target="_blank"><i class='bx bxl-instagram' ></i></a>
@@ -375,22 +376,11 @@
                 <div class="footer-list" style="display: flex; justify-content: center;">
                     <div id="bTt-btn">
                     <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-                    <button onclick="toggleDarkMode()" style="margin: 2rem -2rem; background-color: transparent;border:1px solid slateblue; display: flex; border-radius: 25px; font-size: 2rem; color:black;" ><i class='bx bxs-circle' id="cr2"></i><i id="cr" class='bx bxs-circle'></i></button>
+                    
                 </div>
                 </div>
             </div>
             <div class="copywirght" style="display: flex; justify-content: center; bottom: 0;"><p>Copyright © 2024 Sonic Stack. All Rights Reserved.</p></div>
         </footer>
  </body>
- <script>
-    function toggleDarkMode() {
-    if (document.documentElement.getAttribute('theme') === 'dark') {
-        document.documentElement.removeAttribute('theme');
-    } else {
-        document.documentElement.setAttribute('theme', 'dark');
-    }
-}
-
- </script>
-
 </html>
