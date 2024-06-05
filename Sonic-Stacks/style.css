@@ -41,6 +41,18 @@ html {
     /* height of sticky header */
 }
 
+
+@keyframes web-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 header {
     position: fixed;
     top: 0;
@@ -369,7 +381,11 @@ section {
     max-width: 325px;
     text-align: center;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    animation: web-animation linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
+
 
 .card:hover {
     border: 2px solid rgba(128, 128, 128, 0.26);
@@ -514,7 +530,7 @@ h1 span {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
     height: 5px;
-    background-color: #f8f8f8;
+    background-color: var(--primary);
 }
 
 @media (max-width: 768px) {
@@ -523,7 +539,7 @@ h1 span {
         text-align: center;
         font-size: 25px;
         text-transform: uppercase;
-        color: #222;
+        color: var(--tittle);
         letter-spacing: .5px;
         font-family: "Playfair Display", serif;
         font-weight: 400;
@@ -634,6 +650,9 @@ h1 span {
     margin-bottom: 2rem;
     margin-right: 1rem;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    animation: web-animation linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 /* Form Styles */
