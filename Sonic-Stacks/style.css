@@ -183,6 +183,7 @@ header {
     font-size: 2.8rem;
     cursor: pointer;
     color: var(--secondary);
+
 }
 
 .menu-toggle {
@@ -236,6 +237,17 @@ header {
     .menu-toggle:checked+.hamburger+.items {
         display: flex;
     }
+
+    .menu-toggle + label:after{
+        content: '☰';
+    }
+
+    .menu-toggle:checked + label:after {
+        content: 'X';
+        font-size: 2rem;
+        font-weight: 500;
+        margin-right: .1rem;
+      }
 }
 
 /* Section styling for demonstration */
