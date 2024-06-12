@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Link StyleSheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Game - Zone</title>
+</head>
+
+<style>
+    .hidden {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <header id="header" class="header">
+        <img src="Assets/ticTacToe.png" alt="" />
+        <!-- for mobile Hamburger Icon -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger"></label>
+        <div class="items">
+            <a class="home" href="#">Home</a>
+            <a class="game" href="#">Game</a>
+            <a class="setting" href="#">Settings</a>
+            <a class="leadBoard" href="#">Leaderboard</a>
+        </div>
+    </header>
+
+    <div class="circle" id="btn-container">
+        <button id="btn1" class="cir-btn active" data-target="Home">
+            <i class="bx bxs-circle"></i>
+        </button>
+        <button id="btn2" class="cir-btn" data-target="Game">
+            <i class="bx bxs-circle"></i>
+        </button>
+        <button id="btn3" class="cir-btn" data-target="Settings">
+            <i class="bx bxs-circle"></i>
+        </button>
+        <button id="btn4" class="cir-btn" data-target="LeaderBoard">
+            <i class="bx bxs-circle"></i>
+        </button>
+    </div>
+
+    <section class="section tab" id="Home">
+        <h1>
+            <span id="tic">Tick</span><span id="tac">Tack</span><span id="toe">Toe</span>
+        </h1>
+        <button id="btn" data-target="Game">Play Now</button>
+    </section>
+
+
+    <section class="section" id="Game">      
+        <div class="alertPopUp hidden">
+            <p class="alertMSg">Are you sure you want to reset & start the New Game?</p>
+            <div class="action">
+            <button class="action-btnC" onClick="closePopUp()">Cancel</button>
+            <button class="action-btnO" id="rst-btn" onClick="closePopUp()">Yes</button>
+        </div>
+        
+        </div> 
+        <div class="game">
+            <!-- Audio-->
+            <audio id="clickSound" src="Assets/audio/click.wav"></audio>
+            <audio id="winnerSound" src="Assets/audio/winner.wav"></audio>
+
+            <div class="profile">
+                <div class="card-img">
+                    <img src="Assets/img/playerB.png" alt="" />
+                </div>
+                <h2 id="Player-A">Player 1</h2>
+                <div class="turn-x hidden">
+                    <button id="turn-x" class="turn"></button>
+                </div>
+                <div class="history">
+                    <h2>Total Score</h2>
+                    <button class="scoreValue" id="ScoreA"></button>
+                    <button id="UpdateScore" onClick="updateScore()">Update Score</button>
+                </div>
+                <div class="winner-container-X hidden">
+                    <button id="msg-x" class="res-x"></button>
+                </div>
+            </div>
+
+            <div class="container" style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          ">
+
+                <div class="game-bordx3 hidden">
+                    <button id="A" class="box"></button>
+                    <button id="S" class="box"></button>
+                    <button id="H" class="box"></button>
+                    <button id="I" class="box"></button>
+                    <button id="F" class="box"></button>
+                    <button id="K" class="box"></button>
+                    <button id="H" class="box"></button>
+                    <button id="A" class="box"></button>
+                    <button id="N" class="box"></button>
+                </div>
+
+                <div class="game-bordx5 hidden">
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                </div>
+                <div class="game-bordx4 hidden">
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                </div>
+                <button id="newGame-btn" onClick="popup()">New Game</button>
+                <div class="rstMsg hidden" style="margin-top: 1rem;">
+                    <button id="msg-m" class="res-m"></button>
+                </div>
+                <div class="tieMsg hidden" style="margin-top: 1rem;">
+                    <button id="msg-t" class="res-t"></button>
+                </div>
+            </div>
+
+            <div class="profile">
+                <div class="card-img">
+                    <img id="humn-png" class="c hidden" src="Assets/img/playerB.png" alt="" />
+                    <img id="com-png" class="c hidden" src="Assets/img/computer.png" alt="" />
+                </div>
+                <h2 id="Player-B">Player 2</h2>
+                <div class="turn-o hidden">
+                    <button id="turn-o" class="turn"></button>
+                </div>
+                <div class="history">
+                    <h2>Total Score</h2>
+                    <button class="scoreValue" id="ScoreB"></button>
+                    <button id="UpdateScore" onClick="updateScore()">Update Score</button>
+                </div>
+                <div class="winner-container-O hidden">
+                    <button id="msg-o" class="res-o">Winner</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Settings -->
+    <section class="section" id="Settings">
+        <div class="form-box">
+            <img src="Assets/img/settings.gif" alt="">
+            <div id="settings" class="Sett-form">
+
+                <label for="player1">Player 1</label>
+                <input type="text" id="player1" name="player1" value="You">
+
+                <label for="player2">Player 2</label>
+                <input type="text" id="player2" name="player2" value="Computer">
+
+
+
+                <label for="mode">Game Board</label>
+                <select id="mode">
+                    <option selected value="3">3 X 3</option>
+                    <option value="4">4 X 4</option>
+                    <option value="5">5 X 5</option>
+                </select>
+                <label for="level">Select Game Level</label>
+                <select id="level">
+                    <option selected value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <div class="form-btn">
+                    <button type="submit" onClick="updateScore()" id="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="LeaderBoard">
+        <div class="leaderBoard">
+            <div class="tittle">
+                <h1>LeaderBoard</h1>
+            </div>
+            <div class="rankTable">
+                <div class="first">
+                    <img src="Assets/img/rank-1.png" alt="">
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>
+                       
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                <div class="first">
+                    <img src="Assets/img/rank-2.png" alt="">
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>
+                       
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                <div class="first">
+                    <img src="Assets/img/rank-3.png" alt="">
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>
+                        
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                <div class="first">
+                    <div class="icon"><i class='bx bxs-user-circle'></i></div>
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>
+                     
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                <div class="first">
+                    <div class="icon"><i class='bx bxs-user-circle'></i></div>
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>
+                        
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                <div class="first">
+                    <div class="icon"><i class='bx bxs-user-circle'></i></div>
+                    <div class="fetchData">
+                        <button class="UserName">Not Found</button>  
+                        <button class="score">000</button>
+                        </div>
+                </div>
+                <div class="line"></div>
+                
+                <div class="line"></div>
+                <div class="clrBtn">
+                <button id="clrData" onclick="deleteAllData()">Reset</button>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    function popup() {
+        const popUpMenu = document.querySelector(".alertPopUp")
+        popUpMenu.classList.remove("hidden")
+    }
+    function closePopUp(){
+        const popUpMenu = document.querySelector(".alertPopUp")
+        popUpMenu.classList.add("hidden")
+    }
+    function updateScore() {
+        window.location.reload()
+    }
+
+    const deleteAllData = () => {
+        localStorage.clear()
+        window.location.reload()
+    }
+
+    const btnContainer = document.getElementById("btn-container");
+    const btns = btnContainer.getElementsByClassName("cir-btn");
+
+    const home = document.querySelector(".home");
+    home.addEventListener("click", function () {
+        document.getElementById("btn1").click();
+    });
+
+    const game = document.querySelector(".game");
+    game.addEventListener("click", function () {
+        document.getElementById("btn2").click();
+    });
+
+    const setting = document.querySelector(".setting");
+    setting.addEventListener("click", function () {
+        document.getElementById("btn3").click();
+    });
+
+    const leadBoard = document.querySelector(".leadBoard");
+    leadBoard.addEventListener("click", function () {
+        document.getElementById("btn4").click();
+    });
+
+    const playBtn = document.querySelector("#btn");
+    playBtn.addEventListener("click", function () {
+        document.getElementById("btn2").click();
+    });
+
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            const current = document.querySelector(".cir-btn.active");
+            if (current) {
+                current.classList.remove("active");
+            }
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(function (section) {
+                section.classList.remove("tab");
+            });
+            this.classList.add("active");
+            const targetId = this.getAttribute("data-target");
+            const targetSection = document.getElementById(targetId);
+            targetSection.classList.add("tab");
+        });
+    }
+</script>
+<script src="game.js"></script>
+
+</html>
